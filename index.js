@@ -14,7 +14,7 @@ connectDB();
 
 // CORS Configuration
 const corsOptions = {
-    origin: 'https://taskmagementclient.vercel.app', // Change to your client URL
+    origin: 'https://taskmagementclient.vercel.app',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
 };
