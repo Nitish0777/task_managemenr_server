@@ -12,15 +12,8 @@ const PORT = process.env.PORT || 5000;
 // Connect to MongoDB
 connectDB();
 
-// CORS Configuration
-const corsOptions = {
-    origin: 'https://taskmagementclient.vercel.app',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-};
-
 // Use CORS middleware
-app.use(cors(corsOptions));
+app.use(cors());
 
 // Middleware
 app.use(bodyParser.json());
@@ -35,9 +28,6 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {    
     res.send('Hello World');
 });
-
-// Enable pre-flight for all routes
-app.options('*', cors(corsOptions));
 
 // Routes
 app.use('/api', taskRoutes);
