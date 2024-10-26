@@ -13,7 +13,12 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // Cors
-app.use(cors());
+app.use(cors(
+    {
+        origin: "https://taskmagementclient.vercel.app/",
+    }
+    
+));
 
 // Middleware
 app.use(bodyParser.json());
