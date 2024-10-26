@@ -12,12 +12,16 @@ const PORT = process.env.PORT || 5000;
 // Connect to MongoDB
 connectDB();
 
-// Cors
-app.use(cors(
-    {
-        origin: '*',
-    }
-));
+// CORS Configuration
+const corsOptions = {
+    origin: 'https://taskmagementclient.vercel.app', 
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true, 
+};
+
+// Use CORS middleware
+app.use(cors(corsOptions));
+
 
 // Middleware
 app.use(bodyParser.json());
