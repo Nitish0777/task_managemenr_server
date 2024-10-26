@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const connectDB = require('./config/db'); // Make sure to define your MongoDB connection in this file
+const connectDB = require('./config/db'); 
 const taskRoutes = require('./routes/taskRoutes');
 const authRoutes = require('./routes/authRoutes');
 const cors = require('cors');
@@ -12,7 +12,6 @@ const PORT = process.env.PORT || 5000;
 // Connect to MongoDB
 connectDB();
 
-// CORS Configuration
 const corsOptions = {
     origin: '*',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
@@ -42,7 +41,6 @@ app.options('*', cors(corsOptions));
 app.use('/api', taskRoutes);
 app.use('/api/auth', authRoutes);
 
-// Start Server
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
