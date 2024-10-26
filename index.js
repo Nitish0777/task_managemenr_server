@@ -15,9 +15,9 @@ connectDB();
 // Cors
 app.use(cors(
     {
-        origin: "https://taskmagementclient.vercel.app/",
+        origin: '*',
     }
-    
+
 ));
 
 // Middleware
